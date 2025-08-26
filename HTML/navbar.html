@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .navbar{
+            background-color: #546;
+            display:flex;
+            justify-content: space-between;
+            
+        }
+        .navbar ul{
+            display: flex;
+            padding: 0px;
+        }
+        .navbar li{
+            color: white;
+            list-style: none;
+            float:left;
+            padding: 15px;
+            cursor: pointer;
+
+        }
+        .navbar li:hover{
+            background-color: #456;
+        }
+        .form-container{
+            display: none;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class=" navbar">
+    <ul class="navbar">
+        <li>Home</li>
+        <li>Contact</li>
+        <li>About</li>
+    </ul>
+    <ul>
+        <li onclick="showform('signup')">signup</li>
+        <li onclick="showform('Login')">Login</li>
+    </ul>
+</div>
+<!---signup form--->
+<div id ="signup" class="form-container">
+    <h2>signup Form</h2>
+    <input type="text" placeholder="Enter User Name">
+    <input type="password" placeholder="Enter password">
+    <input type="email" placeholder="Enter Email">
+    <button>SignUp</button>
+</div>
+<div id ="Login" class="form-container">
+    <h2>Login Form</h2>
+    <input type="text" placeholder="User name">
+    <input type="password" placeholder="password">
+    <button>Login</button>
+</div>
+<!--define javascprit function-->
+<script>
+    function showform(formId){
+        //hide all the opened forms
+        document.querySelectorAll('.form-container').forEach(
+            form => {form.style.display = 'none'}
+        );
+        //open specified form
+        document.getElementById(formId).style.display = 'block';
+    }
+</script>
+</body>
+</html>
